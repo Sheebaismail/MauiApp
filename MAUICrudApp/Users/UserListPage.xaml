@@ -1,0 +1,38 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MAUICrudApp.Pages.UserListPage"
+             Title="User List">
+
+  <VerticalStackLayout>
+    <!-- Button to navigate to AddUserPage -->
+    <Button Text="Add User" Command="{Binding NavigateToAddUserCommand}" />
+
+    <!-- CollectionView to display users -->
+    <CollectionView ItemsSource="{Binding Users}" VerticalOptions="FillAndExpand">
+      <CollectionView.ItemTemplate>
+        <DataTemplate>
+          <SwipeView>
+            <SwipeView.RightItems>
+              <SwipeItems>
+                <SwipeItem Text="Edit" BackgroundColor="Blue"
+                           Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.NavigateToEditUserCommand}"
+                           CommandParameter="{Binding}" />
+
+                <SwipeItem Text="Delete" BackgroundColor="Red"
+                           Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.DeleteUserCommand}"
+                           CommandParameter="{Binding}" />
+              </SwipeItems>
+            </SwipeView.RightItems>
+            <Frame Padding="10" Margin="5" CornerRadius="10" BackgroundColor="LightGray">
+              <VerticalStackLayout>
+                <Label Text="{Binding FirstName}" FontSize="20" TextColor="Black" FontAttributes="Bold" />
+                <Label Text="{Binding LastName}" FontSize="18" TextColor="Gray" />
+                <Label Text="{Binding Email}" FontSize="16" TextColor="DarkGray" />
+              </VerticalStackLayout>
+            </Frame>
+          </SwipeView>
+        </DataTemplate>
+      </CollectionView.ItemTemplate>
+    </CollectionView>
+  </VerticalStackLayout>
+</ContentPage>

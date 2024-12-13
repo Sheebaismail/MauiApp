@@ -1,0 +1,63 @@
+# Build directories
+/bin/
+/obj/
+/platforms/
+
+# User-specific files
+.vs/
+.idea/
+.vscode/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Dependency directories
+.nuget/
+
+# Temporary files
+*.user
+*.userosscache
+*.suo
+*.cache
+*.log
+
+# JetBrains Rider
+.idea/
+
+# Microsoft Visual Studio for Mac
+.vscode/
+
+# ASP.NET Core
+wwwroot/
+
+# Output directories for the various platforms
+/android/
+/ios/
+/winui/
+
+# AppSettings
+appsettings.json
+appsettings.Development.json
+
+# Android-specific build outputs
+*/bin/*
+*/obj/*
+*.apk
+*.aab
+
+# iOS-specific build outputs
+*/bin/*
+*/obj/*
+*.ipa
+
+# Windows-specific build outputs
+*/bin/*
+*/obj/*
+*.appx
+*.appxbundle
+
+# macOS specific files
+.idea/
+.vscode/
+

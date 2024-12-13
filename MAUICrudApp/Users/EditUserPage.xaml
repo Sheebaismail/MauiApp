@@ -1,0 +1,14 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MAUICrudApp.Pages.EditUserPage"
+             Title="Edit User">
+
+  <VerticalStackLayout Padding="10">
+    <Entry Placeholder="First Name" Text="{Binding User.FirstName}" />
+    <Entry Placeholder="Last Name" Text="{Binding User.LastName}" />
+    <Entry Placeholder="Email" Text="{Binding User.Email}" />
+    <Entry Placeholder="Password" Text="{Binding User.Password}" />
+
+    <Button Text="Update" Command="{Binding SaveUserCommand}" />
+  </VerticalStackLayout>
+</ContentPage>
